@@ -18,25 +18,25 @@ Use bucket versioning​
 We work for a company using Amazon S3 for data storage. An application residing on an EC2 instance needs to push reporting data to an S3 bucket daily. We are tasked with creating an S3 bucket for our company to use for storing this report data. For a successful deployment, we need to ensure the EC2 instance has enough privileges to be able to upload and retrieve data from the S3 bucket. For security reasons, only the EC2 instance can write data to the S3 bucket. The files in the S3 bucket also require protection against accidental deletion.
 
 ## Task 1: Create a bucket​
-You are new to Amazon S3 and want to test the features and security of S3 as you configure the environment to hold the EC2 report data. You know that every object in Amazon S3 is stored in a bucket so creating a new bucket to hold the reports is the first thing on your task list.​
+We are new to Amazon S3 and want to test the features and security of S3 as we configure the environment to hold the EC2 report data. We know that every object in Amazon S3 is stored in a bucket so creating a new bucket to hold the reports is the first thing on our task list.​
 
-In this task, you create a bucket to hold your EC2 report data and then examine the different bucket configuration options.​
+In this task, we create a bucket to hold our EC2 report data and then examine the different bucket configuration options.​
 
 At the top-left of the AWS Management Console, on the menu choose S3.​
 
- You can also search for S3 at the top of the services menu.​
+ We can also search for S3 at the top of the services menu.​
 
 <img width="589" alt="Screenshot 2024-03-23 184447" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/afb15836-6e7f-4c63-bf80-82fc4fd4f691">
 
 1.Choose Create bucket​
-Leave Region at its default value. -Selecting a particular region allows you to optimize latency, minimize costs, or address regulatory requirements. Objects stored in a region never leave that region unless you explicitly transfer them to another region.​
+Leave Region at its default value. -Selecting a particular region allows us to optimize latency, minimize costs, or address regulatory requirements. Objects stored in a region never leave that region unless we explicitly transfer them to another region.​
 
- Bucket names must be between 3 and 63 characters long and consist of only lowercase letters, numbers, or hyphens. The bucket name must be globally unique across all of Amazon S3, regardless of account or region, and cannot be changed after the bucket is created. As you enter a bucket name, a help box displays showing any violations of the naming rules. Refer to the Amazon S3 bucket naming rules in the Additional resources section at the end of the lab for more information​
-Under the General configuration section, name your bucket: ​
+ Bucket names must be between 3 and 63 characters long and consist of only lowercase letters, numbers, or hyphens. The bucket name must be globally unique across all of Amazon S3, regardless of account or region, and cannot be changed after the bucket is created. As we enter a bucket name, a help box displays showing any violations of the naming rules. Refer to the Amazon S3 bucket naming rules in the Additional resources section at the end of the lab for more information​
+Under the General configuration section, name our bucket: ​
 
 reportbucket(NUMBER)​
 
- Replace NUMBER in the bucket name with a random number. This ensures that you have a unique name.​
+ Replace NUMBER in the bucket name with a random number. This ensures that we have a unique name.​
 
 Example Bucket Name - ​
 
@@ -59,9 +59,9 @@ reportbucket7763476​
  <img width="960" alt="Screenshot 2024-03-23 191044" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/1b26ecf8-dd4e-4037-a722-520f3581f7dc">
 
  ### Task 2: Upload an object to the bucket​
-Now that you have a bucket created for your report data, you are ready to work with objects. An object can be any kind of file: a text file, a photo, a video, a zip file, and so on. When you add an object to Amazon S3, you have the option of including metadata with the object and setting permissions to control access to the object.​
+Now that we have a bucket created for our report data, we are ready to work with objects. An object can be any kind of file: a text file, a photo, a video, a zip file, and so on. When we add an object to Amazon S3, we have the option of including metadata with the object and setting permissions to control access to the object.​
 
-In this task you test uploading objects to your reportbucket. You have a screencapture of a daily report and want to upload this image to your S3 bucket.​
+In this task you test uploading objects to our reportbucket. We have a screencapture of a daily report and want to upload this image to our S3 bucket.​
 
 Right-click this link new-report.png, choose Save link as, and save the file locally.​
 
@@ -80,7 +80,7 @@ This launches an upload wizard. Use this wizard to upload files either by select
 
 <img width="960" alt="Screenshot 2024-03-23 192315" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/102d4655-909a-48c2-9bcd-35361da6a758">
 
-3.Browse to and select the new-report.png file that you downloaded previously.​
+3.Browse to and select the new-report.png file that we downloaded previously.​
 
 ​<img width="960" alt="Screenshot 2024-03-23 192720" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/6b2edde0-d647-4e17-9a61-4048eea3fad6">
 
@@ -88,9 +88,9 @@ This launches an upload wizard. Use this wizard to upload files either by select
 
 ​<img width="960" alt="Screenshot 2024-03-23 192817" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/6fcb9316-9848-4abe-810a-9ef3402f2861">
 
-5.Your file is successfully uploaded when the green bar indicating Upload succeeded appears.​
+5.Our file is successfully uploaded when the green bar indicating Upload succeeded appears.​
 
- If the file does not display in the bucket within a few seconds of uploading it, you may need to choose the  refresh button at the top-right.​
+ If the file does not display in the bucket within a few seconds of uploading it, we may need to choose the  refresh button at the top-right.​
 
 6.In the Upload: status section, choose Close.​
 
@@ -100,9 +100,9 @@ This launches an upload wizard. Use this wizard to upload files either by select
 
 Make an object public​
 
-Security is a priority in Amazon S3. Before you configure your EC2 instance to connect to the reportbucket, you want to test the bucket and object settings for security.​
+Security is a priority in Amazon S3. Before we configure our EC2 instance to connect to the reportbucket, we want to test the bucket and object settings for security.​
 
-In this task, you configure permissions on your bucket and your object to test accessibility.​
+In this task, we configure permissions on our bucket and our object to test accessibility.​
 First, you attempt to access the object to confirm that it is private by default.​
 
 In the reportbucket overview page, on the objects tab, locate the new-report.png object, and choose the new-report.png file name.​
@@ -117,13 +117,13 @@ The link should look similar to: https://reportbucket7763476.s3.amazonaws.com/ne
 
 2.Open a new browser tab and paste the Object URL link into the address field, and then press Enter.​
 
-​You receive an Access Denied error. This is because objects in Amazon S3 are private by default.​
+​We receive an Access Denied error. This is because objects in Amazon S3 are private by default.​
 
-Now that you’ve confirmed the default security of S3 is private, you want to test how to make the object publicly accessible.​
+Now that we’ve confirmed the default security of S3 is private, we want to test how to make the object publicly accessible.​
 
 <img width="960" alt="Screenshot 2024-03-23 200323" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/30eea3e6-9291-47a3-9edc-a1939971395d">
 
-3.You should still be on the new-report.png Object overview tab.​
+3.We should still be on the new-report.png Object overview tab.​
 Choose the Object actions button and Make public via ACL, which will be the last item in the list.​
 
 Notice the warning Public access is blocked because Block Public Access settings are turned on for this bucket. This error displays because this bucket is configured not to allow public access. The bucket settings override any permissions applied to individual objects. If you want the object to viewable by the general public, you need to turn off Block Public Access (BPA).​
@@ -140,17 +140,15 @@ Choose the Permissions tab.​
 5.Under Block public access (bucket settings), choose Edit to change the settings.​
 Deselect the Block all public access option, and then leave all other options deselected.​
 
-Notice that all of the individual options remain deselected. When deselecting all public access, you must then select the individual options that apply to your situation and security objectives. Both ACLs and bucket policies are used later in the lab, so they all remain deselected in this task. In a production environment, it is recommended to use the least permissive settings possible. Refer to the Amazon S3 block public access link in the Additional Resources section at the end of the lab for more information.​
+Notice that all of the individual options remain deselected. When deselecting all public access, we must then select the individual options that apply to our situation and security objectives. Both ACLs and bucket policies are used later in the lab, so they all remain deselected in this task. In a production environment, it is recommended to use the least permissive settings possible. ​
 
 Choose Save changes​
 
 ​<img width="960" alt="Screenshot 2024-03-23 202655" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/bd77d411-f333-4f08-97be-b033f1f85b43">
 
-6.A dialogue box opens asking you to confirm your changes. Type ​
+6.A dialogue box opens asking us to confirm our changes. 
 
-confirm​
-
- in the field, and then choose Confirm​
+Type ​confirm​ in the field, and then choose Confirm​.
 
 ​<img width="960" alt="Screenshot 2024-03-23 202820" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/566c381c-5a88-4b14-9304-e1002acd3df1">
 
@@ -179,18 +177,18 @@ Choose Close to return to the object overview.​
 10.Return to the other browser tab that displayed Access Denied for the new-report.png and refresh  the page.​
 The new-report.png now displays properly because it is publicly accessible.​
 
-Close the web browser tab that displays your new-report.png image and return to the tab with the Amazon S3 Management Console.​
+Close the web browser tab that displays our new-report.png image and return to the tab with the Amazon S3 Management Console.​
 
-In this example, you granted read access to just one specific object. If you wish to grant access to the entire bucket, you need to use a bucket policy, which is covered later in this lab.​
+In this example, we granted read access to just one specific object. If we wish to grant access to the entire bucket, we need to use a bucket policy, which is covered later in this lab.​
 
 ​<img width="960" alt="Screenshot 2024-03-23 205744" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/b5866fa7-20c1-4f1e-82f0-de2450371eb2">
 
-In the next task, you work with your EC2 instance to confirm connectivity to the S3 bucket.​
+In the next task, we work with your EC2 instance to confirm connectivity to the S3 bucket.​
 
-### Task 4: Test connectivity from the EC2 instance​
-In this task, you connect to your Amazon Elastic Compute Cloud (Amazon EC2) instance to test connectivity and security to the S3 reportbucket.​
+### Task 4: Create a bucket policy​
+In this task, you connect to our Amazon Elastic Compute Cloud (Amazon EC2) instance to test connectivity and security to the S3 reportbucket.​
 
-You should already be logged into the AWS Managment Console. If not, follow the steps in the Start Lab section to log in to the AWS Management Console.​
+We should already be logged into the AWS Managment Console. If not, follow the steps in the Start Lab section to log in to the AWS Management Console.​
 
 On the  menu, choose EC2.​
 
@@ -206,15 +204,16 @@ Select  Bastion Host and choose Connect​
 
 For Connection method, select Session Manager.​
 
- Session Manager enables you to connect to the bastion host instance without the need for specific ports to be open on your firewall or Amazon Virtual Private Cloud (Amazon VPC) security group. Refer to AWS Systems Manager Session Manager in the Additional resources section at the end of this lab for more information.​
+ Session Manager enables us to connect to the bastion host instance without the need for specific ports to be open on our firewall or Amazon Virtual Private Cloud (Amazon VPC) security group. 
 
 Choose Connect​
 
 <img width="960" alt="Screenshot 2024-03-23 210801" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/90aaa03e-b48e-4ac5-9af4-4da066919570">
 
-3.A new browser tab or window opens with a connection to the bastion host instance.​ You are now connected to the EC2 instance that holds the reporting application. Because Session Manager uses https port 443, it does not require you to open SSH port 22 to the outside world, you are satisfied with this security feature. Now you want to see how EC2 interacts with your S3 bucket.​ In the bastion host session, enter the following command to change to home directory (/home/ssm-user/): ​cd ~​ The output returns you to the command prompt.​ Enter the following command to verify you are in the home directory:​ pwd​ The output should be:​ /home/ssm-user​ You are now in the ssm-user’s home directory where you will run all of the commands in this lab.​ Enter the following command to list all of your S3 buckets.​ aws s3 ls​ The output should look similar to this:​ 2020-11-11 22:27:28 ql-cf-templates-1603924046-5d95cf473a39fe4e-us-west-2​ 2020-11-11 22:27:49 qltrail-lab-59350-1603924067​ 2020-11-11 22:34:46 reportbucket987987​ You see the reportbucket you created as well as lab auto-generated buckets.​ Note: During the creating of the lab enviornment, both an Instance Profile (which defines who you are for authentication) and a Role (which defines what you can do after you authenticate), have been automatically added for the EC2 instance to allow the EC2 instance to list the S3 buckets and objects.​​
+3.A new browser tab or window opens with a connection to the bastion host instance.​ We are now connected to the EC2 instance that holds the reporting application. Because Session Manager uses https port 443, it does not require us to open SSH port 22 to the outside world, we are satisfied with this security feature. Now we want to see how EC2 interacts with our S3 bucket.​ In the bastion host session, enter the following command to change to home directory (/home/ssm-user/): ​cd ~​ The output returns us to the command prompt.​ Enter the following command to verify you are in the home directory:​ pwd​ The output should be:​ /home/ssm-user​ we are now in the ssm-user’s home directory where we will run all of the commands in this lab.​ Enter the following command to list all of your S3 buckets.​ aws s3 ls​ The output should look similar to this:​ 2020-11-11 22:27:28 ql-cf-templates-1603924046-5d95cf473a39fe4e-us-west-2​ 2020-11-11 22:27:49 qltrail-lab-59350-1603924067​ 2020-11-11 22:34:46 reportbucket987987​ We see the reportbucket we created as well as lab auto-generated buckets.​ 
+Note: During the creating of the project enviornment, both an Instance Profile (which defines who we are for authentication) and a Role (which defines what we can do after you authenticate), have been automatically added for the EC2 instance to allow the EC2 instance to list the S3 buckets and objects.​​
 
-Enter the following command to list all objects in your reportbucket. Remember to change the number at the end of the reportbucket name, to match the name of the bucket you created. ​
+Enter the following command to list all objects in our reportbucket. Remember to change the number at the end of the reportbucket name, to match the name of the bucket we created. ​
 
 ​
 
@@ -258,7 +257,7 @@ ls ​
 
 ​
 
-The output shows some files created in your reports directory to test the application. ​
+The output shows some files created in our reports directory to test the application. ​
 
 ​
 
@@ -266,7 +265,7 @@ dolphins.jpg files.zip report-test.txt  report-test1.txt report-test2.txt report
 
 ​
 
-Type the following to see if you can copy a file to the S3 bucket. ​
+Type the following to see if we can copy a file to the S3 bucket. ​
 
 ​
 
@@ -286,7 +285,7 @@ Leave this window open and go back to the AWS Console tab. ​
 
 ​
 
-In the next task you create a bucket policy to add the PutOperation. ​
+In the next task we create a bucket policy to add the PutOperation. ​
 
 ​![image](https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/5ee695dc-d942-40c3-b0a0-31ef4d1b956c)
 
@@ -294,14 +293,14 @@ In the next task you create a bucket policy to add the PutOperation. ​
 
 A bucket policy is a set of permissions associated with an S3 bucket. It is used to control access to an entire bucket or to specific directories within a bucket.​
 
-In this task, you use the AWS Policy Generator to create a bucket policy to enable read and write access from the EC2 instance to the bucket to ensure your reporting application can successfully write to S3.​
+In this task, we use the AWS Policy Generator to create a bucket policy to enable read and write access from the EC2 instance to the bucket to ensure our reporting application can successfully write to S3.​
 Right-click this link sample-file.txt, choose Save link as, and save the file locally.​
 
 Return to the AWS Management Console, go to the menu and select S3.​
 
 ​<img width="960" alt="Screenshot 2024-03-23 215606" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/f6b8273a-b49c-47e3-9834-98de52bd3ac5">
 
-5.In the S3 Management Console tab, select the name of your bucket.​
+5.In the S3 Management Console tab, select the name of our bucket.​
 
 Choose Upload and use the same upload process as in the previous task to upload the sample-file.txt.​
 
@@ -317,7 +316,7 @@ Choose Upload and use the same upload process as in the previous task to upload 
 7. Under the Object overview section, locate and copy the Object URL link.​
 
 In a new browser tab, paste the link into the address field, and then press Enter.​
-Once again, Access Denied will be displayed. You need to configure a bucket policy to grant access to all objects in the bucket without having to specify permissions on each object individually.​
+Once again, Access Denied will be displayed. We need to configure a bucket policy to grant access to all objects in the bucket without having to specify permissions on each object individually.​
 
 Keep this browser tab open, but return to the tab with the S3 Management Console.​
 
@@ -367,7 +366,7 @@ It looks like this:​
 
 ​<img width="960" alt="Screenshot 2024-03-23 222226" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/d33e7da1-467b-496a-b6fb-983d71cd9fcb">
 
-13.Choose Add Statement. The details of the statement you configured are added to a table below the button. You can add multiple statements to a policy.​
+13.Choose Add Statement. The details of the statement we configured are added to a table below the button. We can add multiple statements to a policy.​
 
 <img width="960" alt="Screenshot 2024-03-23 223701" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/dfb56639-214c-4406-9603-8637089a66e9">
 
@@ -380,16 +379,16 @@ Confirm that ​
 
 /*​
 
- appears after your bucket name as shown in the Resource line in the sample above.​
+ appears after our bucket name as shown in the Resource line in the sample above.​
 
-Copy the policy you created to your clipboard.​
+Copy the policy we created to clipboard.​
 
 Close the web browser tab and return to the tab with the Bucket policy editor.​
 
 ​<img width="960" alt="Screenshot 2024-03-23 223920" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/28b58b36-a2d9-47a8-9c5e-2c9ac7cd225b">
 
 
-16.Paste the bucket policy you created into the Bucket policy editor.​
+16.Paste the bucket policy we created into the Bucket policy editor.​
 
 Choose Save changes​
 
@@ -397,9 +396,9 @@ Choose Save changes​
 <img width="960" alt="Screenshot 2024-03-23 230538" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/22da37f8-18da-4800-b9ca-15e3f15f359a">
 
 
-17.Return to the AWS Systems Manager (SSM) window. If your session has timed out, reconnect to the SSM using the steps from earlier in the lab.​
+17.Return to the AWS Systems Manager (SSM) window. If our session has timed out, reconnect to the SSM using the steps from earlier in the lab.​
 
-Type the following to verify you are in the /home/ssm-user/reports directory.​
+Type the following to verify we are in the /home/ssm-user/reports directory.​
 
 pwd​
 
@@ -407,7 +406,7 @@ pwd​
 
 /home/ssm-user/reports​
 
- Enter the following command to list all objects in your reportbucket. Replace NUMBER with the number you used to create your bucket.​
+ Enter the following command to list all objects in your reportbucket. Replace NUMBER with the number we used to create our bucket.​
 
 aws s3 ls s3://reportbucket(NUMBER)​
 
@@ -445,7 +444,7 @@ aws s3 ls s3://reportbucket(NUMBER)​
 2020-11-11 18:32:18         31 report-test1.txt​
 2020-11-11 18:20:22         90 sample-file.txt​
 
-You have successfully uploaded (PutObject) a file from the EC2 instance to your S3 bucket.​
+We have successfully uploaded (PutObject) a file from the EC2 instance to our S3 bucket.​
 
 Now type the following command to retrieve (GetObject) a file from S3 to the EC2 Instance.​
 
@@ -463,7 +462,7 @@ ls​
 
 dolphins.jpg  files.zip  report-test1.txt  report-test2.txt  report-test3.txt  sample-file.txt​
 
-You now see the sample-file.txt in your file list. Congratulations! You have succesfully uploaded and retrieved a file from EC2 to the S3 bucket.​
+We now see the sample-file.txt in your file list. Congratulations! We have succesfully uploaded and retrieved a file from EC2 to the S3 bucket.​
 
 <img width="960" alt="Screenshot 2024-03-23 233232" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/d439a32d-768c-4d37-a1c4-e7aaadc75213">
 
@@ -475,19 +474,18 @@ The page still displays an error message because the Bucket Policy only gave rig
 
 <img width="960" alt="Screenshot 2024-03-23 233612" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/66d5f904-e04b-4e3d-ae1e-23a557118eb0">
 
-19.Next, on your own, go back to the policy generator and add another statement to the bucket policy allowing EVERYONE (*), Read access (GetObject). Take a moment to generate this policy which allows both the EC2InstanceProfileRole to have access to the bucket while giving EVERYONE access to read the objects via the browser.​
+19.Next, on our own, go back to the policy generator and add another statement to the bucket policy allowing EVERYONE (*), Read access (GetObject). Take a moment to generate this policy which allows both the EC2InstanceProfileRole to have access to the bucket while giving EVERYONE access to read the objects via the browser.​
 
 ​<img width="960" alt="Screenshot 2024-03-24 021351" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/2de11fac-9842-47a3-9037-fd10516bcfa0">
 
-20.To test if your policy works, go to your browser with the Access Denied error and refresh it. If you can read the text, then congratulations! Your policy was successful.​
+20.To test if our policy works, go to our browser with the Access Denied error and refresh it. If we can read the text, then our policy was successful.​
 
  If not, look at the policy below for help. The modified policy should look like the policy listed below. Notice that there are TWO statements, one with the EC2InstanceProfileRole and one where the Principal is “*” for everyone.​
 
-If you had trouble generating the policy on your own, you can copy the policy below and paste it into the BucketPolicy Editor. Remember to replace the existing EC2InstanceProfileRole ARN in the policy below with the EC2InstanceProfileRole ARN you copied in an earlier step. Ensure that the /* appears at the end of the Bucket ARN. See the last line of the file as an example.​
 
-​Leave the tab open with the sample-file.txt displayed. You will return to this tab in the next task.​
+​Leave the tab open with the sample-file.txt displayed. We will return to this tab in the next task.​
 
-In this task you created a bucket policy to allow specific access rights to your bucket. In the next section you explore how to keep copies of files to prevent against accidental deletion.​
+In this task we created a bucket policy to allow specific access rights to our bucket. In the next section you explore how to keep copies of files to prevent against accidental deletion.​
 
 <img width="960" alt="Screenshot 2024-03-24 021647" src="https://github.com/vikasgokavi/S3-Object-Storage-and-Governance/assets/105034318/639e2ff4-ab8a-4e90-83dc-6ced814e78d1">
 
